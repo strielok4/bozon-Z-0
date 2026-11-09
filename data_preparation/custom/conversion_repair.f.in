@@ -1,0 +1,95 @@
+      SUBROUTINE FIXCONV
+      IMPLICIT NONE
++CDE, PHCDE.
++CDE, PSCVEC.
++CDE, PSCEVT.
++CDE, TRACKNTP.
+      INTEGER I,J,K,LPA,LPV,LD,LM,LPHPA,JBYT,MASK
+      INTEGER IDS(2),N,FOUND,CODE,STATUS,CHSUM,CH
+      LOGICAL OK,USED(MTRACK)
+      REAL ESUM,OLD
+      MASK=0
+      CALL SBIT1(MASK,1)
+      CALL SBIT1(MASK,32)
+      DO I=1,NVECP
+         USED(I)=.FALSE.
+      ENDDO
+      DO I=1,NVECP
+         IF (IAND(LVLOCK(I),MASK).NE.0) GOTO 90
+         IF (VECP(7,I).NE.0.) GOTO 90
+         IF (ECMAS.LE.0..OR.VECP(4,I).LE.ECMAS) GOTO 90
+         LPA=LVECP(I)
+         IF (LPA.LE.0) GOTO 90
+         CODE=JBYT(IQ(LPA+3),19,7)
+         IF (CODE.LT.21.OR.CODE.GT.24) GOTO 90
+         OLD=VECP(4,I)
+         IDS(1)=0
+         IDS(2)=0
+         N=0
+         CHSUM=0
+         ESUM=0.
+         OK=.TRUE.
+         LPV=LQ(LPA-1)
+         IF (LPV.LE.0) THEN
+            OK=.FALSE.
+            GOTO 70
+         ENDIF
+C Require reciprocal reconstructed parent/vertex association.
+         IF (LQ(LPV-2).NE.LPA) THEN
+            OK=.FALSE.
+            GOTO 70
+         ENDIF
+         LD=LQ(LPV-1)
+         DO WHILE (LD.GT.0)
+            N=N+1
+            IF (N.GT.2) THEN
+               OK=.FALSE.
+               GOTO 70
+            ENDIF
+            FOUND=0
+            DO J=1,NVECP
+               IF (LVECP(J).EQ.LD) THEN
+                  FOUND=FOUND+1
+                  IDS(N)=J
+               ENDIF
+            ENDDO
+            IF (FOUND.NE.1) THEN
+               OK=.FALSE.
+               GOTO 70
+            ENDIF
+            K=IDS(N)
+C Only unlock vertex exclusion; retain all quality/cluster exclusions.
+            IF (LVLOCK(K).NE.INT(Z'80000000')) OK=.FALSE.
+            IF (JBYT(LVSELE(K),31,1).NE.0) OK=.FALSE.
+            IF (USED(K).OR.K.EQ.I) OK=.FALSE.
+            IF (LQ(LD-1).NE.0) OK=.FALSE.
+            LM=LPHPA('MAIN',LD,0)
+            IF (LM.LE.0) THEN
+               OK=.FALSE.
+            ELSE
+               CH=NINT(Q(LM+8))
+               IF (CH.NE.1.AND.CH.NE.2) OK=.FALSE.
+               CHSUM=CHSUM+CH
+            ENDIF
+            IF (.NOT.(VECP(4,K).GT.0.)) OK=.FALSE.
+            ESUM=ESUM+VECP(4,K)
+            LD=LQ(LD)
+         ENDDO
+ 70      STATUS=0
+         IF (N.NE.2.OR.CHSUM.NE.3) OK=.FALSE.
+         IF (.NOT.(ESUM.GT.0..AND.ESUM.LE.ECMAS)) OK=.FALSE.
+         IF (OK) THEN
+            CALL SBIT1(LVLOCK(I),1)
+            DO J=1,2
+               K=IDS(J)
+               CALL SBIT0(LVLOCK(K),32)
+               USED(K)=.TRUE.
+            ENDDO
+            STATUS=1
+         ENDIF
+         WRITE(*,100) I,STATUS,IDS(1),IDS(2),CODE,OLD,ESUM
+ 90      CONTINUE
+      ENDDO
+ 100  FORMAT('PROBE CONV ',5(I10,1X),2(ES17.9,1X))
+      END
+*

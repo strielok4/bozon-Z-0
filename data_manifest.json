@@ -1,0 +1,90 @@
+{
+  "description": "Unfiltered DELPHI and Delphes/ILD feature samples with separate evaluation keys.",
+  "datasets": {
+    "delphi": {
+      "description": "Mixed 10000 visible-Z + 1200 background S events; five reference samples.",
+      "preparation": "data_preparation/README.md"
+    },
+    "delphes": {
+      "description": "S: 10000 randomly sampled visible-Z events + 1200 events from independent calibration/n background; five 10000-event reference samples.",
+      "preparation": "delphes_data_preparation/README.md",
+      "sample_manifest": "evaluation/delphes/sample_manifest.json",
+      "truth_provenance": "evaluation/delphes/truth_provenance.json",
+      "signal_seed": 540201,
+      "background_seed": 540202,
+      "shuffle_seed": 540203
+    }
+  },
+  "files": {
+    "assets/delphes/sample_for_analysis.dat": {
+      "sha256": "05e57227413c5e490f64eb5b504de2d32ebe25bc37bf856c95f7ca3cfbd3eb5f",
+      "bytes": 1830029,
+      "events": 11200
+    },
+    "assets/delphes/sm_lep90_pythia6_test_bg.dat": {
+      "sha256": "b6caeecea4aa407fb3f907b7fbc90017dc949ad9c71d9902203ac1b1087be318",
+      "bytes": 958286,
+      "events": 10000
+    },
+    "assets/delphes/sm_lep90_pythia6_test_ee.dat": {
+      "sha256": "bad1c55d3e9616de8676c2f40a841f343470eaf0d6fffdd8a23e71ee5bbfcb66",
+      "bytes": 1697223,
+      "events": 10000
+    },
+    "assets/delphes/sm_lep90_pythia6_test_mumu.dat": {
+      "sha256": "c6ad4045508a7eab8768adf72a5d206c4ab67f4362357603ab1b55f106ea93ec",
+      "bytes": 1705467,
+      "events": 10000
+    },
+    "assets/delphes/sm_lep90_pythia6_test_qq.dat": {
+      "sha256": "48bed78a98b5eaa386095716dd1e5eb6e0600a9968c8e436ceaae44e42d965eb",
+      "bytes": 1726955,
+      "events": 10000
+    },
+    "assets/delphes/sm_lep90_pythia6_test_tata.dat": {
+      "sha256": "bab732d8c88fac0b8f87738f677c999bf8398b4ddc44ff7c62e638f01a60cdce",
+      "bytes": 1512691,
+      "events": 10000
+    },
+    "assets/delphi/sample_for_analysis.dat": {
+      "sha256": "530b87587591ca24c17490c5f16db248bf7c72d30e3c67abac41199d9d4e9cc0",
+      "bytes": 2158910,
+      "events": 11200
+    },
+    "assets/delphi/sm_lep90_pythia6_test_bg.dat": {
+      "sha256": "d6b47db6a1ae6102723feaa96c3988fd58daa1f1ce808e2be90d0835d5cb89ee",
+      "bytes": 1842733,
+      "events": 10000
+    },
+    "assets/delphi/sm_lep90_pythia6_test_ee.dat": {
+      "sha256": "43ca61406bc223d4046c0efd820c93aa74d57cacebd691ef722e79bef8552b41",
+      "bytes": 1819380,
+      "events": 9990
+    },
+    "assets/delphi/sm_lep90_pythia6_test_mumu.dat": {
+      "sha256": "8ee1a5f31fab3e82b7807abb45d1968de74d4233c10f42c7b770547e53ec89de",
+      "bytes": 1793648,
+      "events": 10000
+    },
+    "assets/delphi/sm_lep90_pythia6_test_qq.dat": {
+      "sha256": "b95429f88d461e220b63fefc996c728035cbcca69df2734f6b2684de1747b00c",
+      "bytes": 1956349,
+      "events": 9999
+    },
+    "assets/delphi/sm_lep90_pythia6_test_tata.dat": {
+      "sha256": "d3bb532900501dfe441135bbb99945e658e9efe4d213ff2a9ae18af3a156e212",
+      "bytes": 1807438,
+      "events": 9997
+    },
+    "evaluation/delphes/truth.csv": {
+      "sha256": "b5853a26b91d076d109782bdbd120245a47b651c02edda4e58af74d0b50e20ab",
+      "bytes": 78508,
+      "events": 11200
+    },
+    "evaluation/delphi/truth.csv": {
+      "sha256": "ff32b0baeb262446087d67c244fda4a70245323909e8995ed769beb6d115f6c3",
+      "bytes": 89709,
+      "events": 11200
+    }
+  }
+}

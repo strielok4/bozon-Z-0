@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+work*/
+generated/
+*.root
+*.dat
+*.csv
+*.partial
+*.log
+*.so
+*.o
+*.tgz
+*.tar.gz

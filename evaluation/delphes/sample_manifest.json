@@ -1,0 +1,52 @@
+{
+  "sample": "Delphes/ILD S: visible-Z mixture plus separately generated background",
+  "signal_events": 10000,
+  "background_events": 1200,
+  "selection": "random.Random.sample without replacement, then Random.shuffle; labels loaded afterwards",
+  "signal_seed": 540201,
+  "background_seed": 540202,
+  "shuffle_seed": 540203,
+  "python": "3.13.14",
+  "event_id": "Sequential mixed ID; event_sources.csv preserves original ROOT-entry IDs",
+  "filtering": "None during assembly; classifier selection is separate",
+  "truth_counts": {
+    "e": 401,
+    "h": 8777,
+    "m": 391,
+    "n": 1200,
+    "t": 431
+  },
+  "inputs": {
+    "signal_features": {
+      "name": "visible_z.dat",
+      "sha256": "72cc621485733b52386770ca66d52ab74cad207f575817ff094542c58ee3a6e9"
+    },
+    "signal_truth": {
+      "name": "visible_z_truth.csv",
+      "sha256": "0d722cbf2817627ac772c68f7071eb90fccffb6b468701eff817ba68f929dff3"
+    },
+    "background_features": {
+      "name": "n.dat",
+      "sha256": "0bdbf46ef50a55e010fd59056c29958a62dd2b258f538e9c81823a7099e52df3"
+    },
+    "background_truth": {
+      "name": "background_truth.csv",
+      "sha256": "cda471a504b45deb8299279773bbc68e3c36f7fe728af613a27a72b0575682a0"
+    }
+  },
+  "outputs": {
+    "sample_for_analysis.dat": {
+      "sha256": "05e57227413c5e490f64eb5b504de2d32ebe25bc37bf856c95f7ca3cfbd3eb5f",
+      "events": 11200
+    },
+    "truth.csv": {
+      "sha256": "b5853a26b91d076d109782bdbd120245a47b651c02edda4e58af74d0b50e20ab",
+      "events": 11200
+    },
+    "event_sources.csv": {
+      "sha256": "17663fe3f4249cefef091a2c9427bee0e71104a82fc507c0ecaf58112bd90401",
+      "events": 11200
+    }
+  },
+  "builder_sha256": "d30b10485c517f5b5ecce57aeb9bc3d050e92152bba66b45f18deaeb184649d8"
+}

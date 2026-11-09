@@ -1,0 +1,15 @@
+{
+  "purpose": "Recorded constants implemented in src/generate_background.cc; this file is documentation, not an independently loaded card.",
+  "Beams:idA": 11,
+  "Beams:idB": -11,
+  "Beams:eCM": 91.25,
+  "PDF:lepton2gamma": "on",
+  "Photon:ProcessType": 4,
+  "Photon:Wmin": 10.0,
+  "PhotonCollision:all": "on",
+  "Random:setSeed": "on",
+  "Random:seed": "Required runtime argument; use distinct recorded seeds for training and evaluation.",
+  "Main:timesAllowErrors": 5,
+  "final_state_energy_tolerance_GeV": 0.1,
+  "record_format": "little-endian Fortran sequential LUJETS: two beam entries followed by final-state particles"
+}

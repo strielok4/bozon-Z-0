@@ -1,0 +1,27 @@
+{
+  "method": "Terminal Z fermion-pair ancestry; reconstructed multiplicities and total energy checked against every feature row.",
+  "root_version": "6.34.00",
+  "image": "rootproject/root:6.34.00-ubuntu24.04@sha256:3b46b2e131ade9b2758f7e28cde783893c3ec376645763ebe415b7f97dad9aa6",
+  "extractor_sha256": "3eb48fe34ea3aa8bd1dc502a662e5976782ac3f6f0b7626267a8c6231a299a0a",
+  "sources": {
+    "visible_z": {
+      "root_name": "visible_z.root",
+      "root_sha256": "533f3370aae164ccdcc7949db39fefe2b24f0e152de866cc1c643866b56d7d54",
+      "truth_file": "source_truth/visible_z_truth.csv",
+      "truth_sha256": "0d722cbf2817627ac772c68f7071eb90fccffb6b468701eff817ba68f929dff3",
+      "events": 100000,
+      "max_abs_total_energy_difference_GeV": 4.99987e-07
+    },
+    "background": {
+      "root_name": "calibration/n.root",
+      "root_sha256": "ee759ac841e7b875a41000d3515e8f599d9a97e613da031b8097af593fc7bfe0",
+      "truth_file": "source_truth/background_truth.csv",
+      "truth_sha256": "cda471a504b45deb8299279773bbc68e3c36f7fe728af613a27a72b0575682a0",
+      "events": 10000,
+      "max_abs_total_energy_difference_GeV": 4.99993e-07
+    }
+  },
+  "signal_generator_seed": 340101,
+  "background_generator_seed": 330105,
+  "reference_background_generator_seed": 310105
+}

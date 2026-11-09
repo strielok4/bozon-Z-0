@@ -1,0 +1,144 @@
+{
+  "truth_total": 11200,
+  "evaluated": 11062,
+  "missing": 138,
+  "retention": 0.9876785714285714,
+  "correct": 10535,
+  "incorrect": 527,
+  "unresolved": 0,
+  "accuracy": 0.9523594286747423,
+  "accuracy_wilson95": [
+    0.9482306202469986,
+    0.9561741678789439
+  ],
+  "balanced_accuracy": 0.8726127410691014,
+  "macro_f1": 0.8603471567742353,
+  "macro_classes": [
+    "h",
+    "e",
+    "m",
+    "t",
+    "n"
+  ],
+  "majority_baseline": 0.7868378231784487,
+  "correct_over_original_truth": 0.940625,
+  "per_class": [
+    {
+      "channel": "h",
+      "truth_total": 8790,
+      "support": 8704,
+      "missing": 86,
+      "retention": 0.9902161547212742,
+      "predicted": 8539,
+      "correct": 8500,
+      "precision": 0.9954327204590702,
+      "recall": 0.9765625,
+      "f1": 0.9859073247114771
+    },
+    {
+      "channel": "e",
+      "truth_total": 398,
+      "support": 371,
+      "missing": 27,
+      "retention": 0.9321608040201005,
+      "predicted": 326,
+      "correct": 304,
+      "precision": 0.9325153374233128,
+      "recall": 0.8194070080862533,
+      "f1": 0.8723098995695839
+    },
+    {
+      "channel": "m",
+      "truth_total": 406,
+      "support": 397,
+      "missing": 9,
+      "retention": 0.9778325123152709,
+      "predicted": 365,
+      "correct": 350,
+      "precision": 0.958904109589041,
+      "recall": 0.8816120906801007,
+      "f1": 0.9186351706036745
+    },
+    {
+      "channel": "t",
+      "truth_total": 406,
+      "support": 405,
+      "missing": 1,
+      "retention": 0.9975369458128078,
+      "predicted": 566,
+      "correct": 320,
+      "precision": 0.5653710247349824,
+      "recall": 0.7901234567901234,
+      "f1": 0.659114315139032
+    },
+    {
+      "channel": "n",
+      "truth_total": 1200,
+      "support": 1185,
+      "missing": 15,
+      "retention": 0.9875,
+      "predicted": 1266,
+      "correct": 1061,
+      "precision": 0.8380726698262243,
+      "recall": 0.8953586497890296,
+      "f1": 0.8657690738474092
+    }
+  ],
+  "confusion": {
+    "h": {
+      "h": 8500,
+      "e": 3,
+      "m": 5,
+      "t": 73,
+      "n": 123,
+      "unresolved": 0
+    },
+    "e": {
+      "h": 6,
+      "e": 304,
+      "m": 0,
+      "t": 44,
+      "n": 17,
+      "unresolved": 0
+    },
+    "m": {
+      "h": 1,
+      "e": 7,
+      "m": 350,
+      "t": 20,
+      "n": 19,
+      "unresolved": 0
+    },
+    "t": {
+      "h": 30,
+      "e": 3,
+      "m": 6,
+      "t": 320,
+      "n": 46,
+      "unresolved": 0
+    },
+    "n": {
+      "h": 2,
+      "e": 9,
+      "m": 4,
+      "t": 109,
+      "n": 1061,
+      "unresolved": 0
+    }
+  },
+  "created_at": "2026-11-09T14:22:22.922485+00:00",
+  "results_source": "debug/delphi/final_res.csv",
+  "truth_source": "evaluation/delphi/truth.csv",
+  "truth_sha256": "ff32b0baeb262446087d67c244fda4a70245323909e8995ed769beb6d115f6c3",
+  "output_dir": "results/delphi",
+  "dataset": "delphi",
+  "python": "3.13.14",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "main_sha256": "5114c59bb5c9937a989b9aadbd7dd65660ba662cd7451d2e4c75a1fe046de195",
+  "evaluate_sample_s_sha256": "9ce9da9b09158435fa114643ef0c1832968e638f056bd14d5ab15df5a4af7c7a",
+  "source_hash_normalization": "UTF-8 with LF line endings",
+  "dataset_manifest": "data_manifest.json",
+  "evaluation_stage": "Individual event assignments before response-matrix correction",
+  "scope": "Evaluation of sample S; not an independent holdout."
+}

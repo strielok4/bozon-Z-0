@@ -1,0 +1,86 @@
+{
+  "detector_version": "v94c",
+  "beam_energy_GeV": 45.625,
+  "collision_energy_GeV": 91.25,
+  "laboratory": "CERN",
+  "official_image": "gitlab-registry.cern.ch/delphi/deployment/delphi/al9_64_xrd@sha256:fafdb8b45892b350aa1756b697527180b7bc1465df53c3e1a707cb90dcf2c3bc",
+  "signal_generator": "PYTHIA 5.722 / JETSET 7.409",
+  "background_generator": "PYTHIA 8; exact historical version not recovered",
+  "background_seeds": null,
+  "background_seeds_note": "Not recovered from retained run artifacts. Supply and record explicit, distinct seeds for new runs; historical generation is not claimed byte-reproducible.",
+  "skelana_release_label": "270826",
+  "original_refit_normalized_text_sha256": "20ff2a0a3d0c49a3fb5bb5710d666387ab90ceb30346033bcd667baf023f5e60",
+  "run_numbers": {
+    "train_h": 4101,
+    "train_e": 4102,
+    "train_m": 4103,
+    "train_t": 4104,
+    "train_n": 4105,
+    "blind_z": 4201,
+    "blind_n": 5201
+  },
+  "requested_events": {
+    "train_h": 10000,
+    "train_e": 10000,
+    "train_m": 10000,
+    "train_t": 10000,
+    "train_n": 10000,
+    "blind_z": 10000,
+    "blind_n": 1200
+  },
+  "reconstructed_events": {
+    "train_h": 9999,
+    "train_e": 9990,
+    "train_m": 10000,
+    "train_t": 9997,
+    "train_n": 10000,
+    "blind_z": 10000,
+    "blind_n": 1200
+  },
+  "shuffle_seed": 540101,
+  "recorded_signal_generator_seeds": {
+    "train_h": 20004101,
+    "train_e": 20004102,
+    "train_m": 20004103,
+    "train_t": 20004104,
+    "blind_z": 20004201
+  },
+  "recorded_detector_initial_random_states": {
+    "train_h": [
+      603056212,
+      0,
+      0
+    ],
+    "train_e": [
+      603056213,
+      0,
+      0
+    ],
+    "train_m": [
+      603056214,
+      0,
+      0
+    ],
+    "train_t": [
+      603056215,
+      0,
+      0
+    ],
+    "train_n": [
+      603056216,
+      0,
+      0
+    ],
+    "blind_z": [
+      603056312,
+      0,
+      0
+    ],
+    "blind_n": [
+      603057312,
+      0,
+      0
+    ]
+  },
+  "random_state_provenance": "Read from retained generator and runsim logs; do not substitute these detector states for the PYTHIA 8 background seeds."
+}

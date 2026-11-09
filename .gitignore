@@ -1,0 +1,31 @@
+# Local environments and tools
+.venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+.codex/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Generated analysis and simulation outputs
+/debug/
+/runs/
+/outputs/
+/delphes-work/
+*.log
+*.root
+*.sdst
+*.fadgen
+*.so
+*.dll
+*.exe
+*.o
+*.a
+*.tar
+*.tar.gz
+*.zip

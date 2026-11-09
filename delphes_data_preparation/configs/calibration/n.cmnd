@@ -1,0 +1,13 @@
+! Independent two-photon background proxy for e+e- at the Z pole.
+Main:numberOfEvents = 10000
+Main:timesAllowErrors = 5
+Random:setSeed = on
+Random:seed = 330105
+Beams:idA = 11
+Beams:idB = -11
+Beams:eCM = 91.1876
+
+PDF:lepton2gamma = on
+Photon:ProcessType = 4
+Photon:Wmin = 10.0
+PhotonCollision:all = on
